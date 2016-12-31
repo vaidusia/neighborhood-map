@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Things to do near me</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/knockout-3.4.0.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=AIzaSyBYpDWJfmBKPRT1j05sASgMqd2v22AJGVI"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="header">
+                <h2>Things to do near me</h2>
+            </div>
+        </div>
+        <div class="row">
+            <input id="searchBar" placeholder="Search" type="search" data-bind="textinput: query, valueUpdate: 'keyup'" autocomplete="off">
+                </div>
+        <div class="row">
+            <div id="results" class="col-md-12">
+                <div class="col-md-3">
+                    <ul data-bind="foreach: search()">
+                        <li><a href="#" data-bind="text: title, click: viewModel.clickHandler"></a></li>
+                    </ul>
+                </div>
+                <div id="map" class="col-md-9"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
